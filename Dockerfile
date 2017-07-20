@@ -33,9 +33,7 @@ RUN apt-get update -y && \
 	apt-get install -y --no-install-recommends \
 		wine-staging:i386 \
 		winehq-staging
-
-RUN useradd -m user
-USER user
+USER root
 
 ENTRYPOINT ["/tini", "--"]
 CMD ["/bin/bash"]
